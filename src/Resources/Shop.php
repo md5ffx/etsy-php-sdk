@@ -307,6 +307,16 @@ class Shop extends Resource {
     return $listings;
   }
 
+public function getListing($listingID,array $params = []) {
+    $listing = $this->request(
+      "GET",
+      " /application/listings/{$listingID}",
+      "Listing",
+        $params
+    );
+    return $listing;
+  }
+
   /**
    * Get all active listings for a public shop. Use this method when querying listings for a public shop.
    *
